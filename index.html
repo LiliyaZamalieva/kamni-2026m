@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Твои камни ноября и декабря 2026 · АстроКамни с Лили</title>
+<meta name="description" content="Личный расчёт камней на ноябрь, декабрь и камень дня по дате рождения. АстроКамни с Лили.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1C2D4F; --navy-2:#243a63; --bordo:#7D1B2A; --brass:#C4922A;
+    --ivory:#F5F0E8; --ivory-2:#ebe3d6; --ink:#1C2D4F; --muted:#5b6478;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--ivory); color:var(--ink);
+    font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+    font-size:17px; line-height:1.55;
+  }
+  h1,h2,h3{font-family:Merriweather,Georgia,"Times New Roman",serif; line-height:1.25; margin:0}
+  a{color:inherit}
+  .wrap{max-width:620px; margin:0 auto; padding:0 18px}
+
+  /* шапка */
+  header{background:var(--navy); color:var(--ivory); padding:34px 0 30px; text-align:center}
+  .brand{font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--brass); font-weight:700}
+  header h1{font-size:28px; margin:12px 0 10px}
+  header p{margin:0 auto; max-width:460px; color:#e3dccf; font-size:16px}
+  .line{width:56px; height:2px; background:var(--brass); margin:16px auto 0}
+
+  /* форма */
+  .card{background:#fff; border:1px solid var(--ivory-2); border-radius:16px; padding:22px 20px; margin:22px 0;
+        box-shadow:0 6px 20px rgba(28,45,79,.06)}
+  .form h2{font-size:20px; margin-bottom:6px}
+  .form p.hint{margin:0 0 16px; color:var(--muted); font-size:15px}
+  .row{display:grid; grid-template-columns:1fr 1.6fr 1.2fr; gap:10px}
+  label{display:block; font-size:13px; font-weight:600; color:var(--muted); margin-bottom:4px}
+  select,input{
+    width:100%; font:inherit; font-size:17px; color:var(--ink); background:var(--ivory);
+    border:1px solid #d8cfbf; border-radius:10px; padding:11px 10px; appearance:none; -webkit-appearance:none;
+  }
+  select:focus,input:focus{outline:2px solid var(--brass); outline-offset:1px}
+  .btn{
+    display:block; width:100%; text-align:center; text-decoration:none; cursor:pointer;
+    font:inherit; font-weight:700; font-size:17px; border:0; border-radius:12px; padding:14px 16px; margin-top:16px;
+    background:var(--bordo); color:var(--ivory);
+  }
+  .btn:hover{filter:brightness(1.08)}
+  .btn.ghost{background:transparent; color:var(--navy); border:1.5px solid var(--navy)}
+  .btn.brass{background:var(--brass); color:var(--navy)}
+  .error{color:var(--bordo); font-size:15px; margin-top:10px; display:none}
+
+  /* результат */
+  #result{display:none}
+  .intro p{margin:0 0 10px}
+  .intro p:last-child{margin:0}
+  .badge{display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border-radius:50%;
+         background:var(--navy); color:var(--brass); font-family:Merriweather,serif; font-weight:700; font-size:22px; flex:none}
+  .month-head{display:flex; gap:14px; align-items:center; margin-bottom:12px}
+  .kicker{font-size:13px; text-transform:uppercase; letter-spacing:.1em; color:var(--bordo); font-weight:700}
+  .month-head h3{font-size:20px}
+  .month p{margin:0 0 10px}
+  .list{margin:12px 0 0; padding:0; list-style:none}
+  .list li{padding:8px 0; border-top:1px dashed #e2d8c8}
+  .list li:first-child{border-top:0}
+  .stones{background:var(--ivory); border-radius:10px; padding:10px 12px; margin-top:6px; font-weight:600}
+  .general{border-left:3px solid var(--brass); padding:10px 14px; background:#faf7f1; border-radius:0 10px 10px 0; margin-top:14px; font-size:15.5px}
+  .general b{color:var(--navy)}
+  .section-title{font-size:22px; margin:30px 0 4px}
+  .section-sub{color:var(--muted); margin:0 0 4px; font-size:15px}
+
+  .day-controls{display:flex; gap:10px; align-items:end; margin-bottom:14px}
+  .day-controls > div{flex:1}
+  .weekday{margin-top:12px; padding-top:12px; border-top:1px solid var(--ivory-2)}
+
+  .wear ul{margin:8px 0 0; padding-left:20px}
+  .wear li{margin-bottom:6px}
+
+  .final{background:var(--navy); color:var(--ivory); border:0}
+  .final h2{color:var(--ivory); font-size:22px; margin-bottom:10px}
+  .final p{color:#e3dccf; margin:0 0 10px}
+  .final .btn.ghost{color:var(--ivory); border-color:var(--ivory)}
+  .final .lbl{font-size:13px; text-transform:uppercase; letter-spacing:.1em; color:var(--brass); font-weight:700; margin-top:14px}
+  .final .pair{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+  .final .pair .btn{margin-top:10px}
+  .sign{margin-top:16px; font-family:Merriweather,serif; color:var(--brass)}
+  footer{text-align:center; color:var(--muted); font-size:13px; padding:10px 0 34px}
+  @media (max-width:420px){ header h1{font-size:24px} .row{grid-template-columns:1fr 1.5fr 1.25fr; gap:8px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">АстроКамни с Лили</div>
+    <h1>Твои камни ноября и декабря 2026</h1>
+    <p>Личный расчёт по дате рождения: камень на ноябрь, на декабрь и камень на каждый день до Нового года.</p>
+    <div class="line"></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="card form" id="formCard">
+    <h2>Введи дату рождения</h2>
+    <p class="hint">Можно посчитать и для себя, и для близких — сколько угодно раз.</p>
+    <div class="row">
+      <div><label for="d">День</label><select id="d"></select></div>
+      <div><label for="m">Месяц</label><select id="m"></select></div>
+      <div><label for="y">Год</label><input id="y" type="number" inputmode="numeric" placeholder="1985" min="1900" max="2026"></div>
+    </div>
+    <button class="btn" id="calc">Рассчитать мои камни</button>
+    <div class="error" id="err">Проверь дату рождения: кажется, такой даты нет.</div>
+  </section>
+
+  <div id="result">
+
+    <section class="card intro">
+      <div class="kicker" id="forWhom">Расчёт</div>
+      <p>Конец года — это не гонка «успеть всё». Это время подвести итоги и собрать силы для нового цикла.</p>
+      <p>Твои камни месяца — не случайный список модных минералов. Они рассчитаны по твоей дате рождения и показывают, на что опереться в ноябре и декабре, что тебя поддержит, а что будет забирать энергию.</p>
+      <p>Как выбрать? Прислушайся к себе. Возьми один-два камня, которые откликаются по цвету и ощущению, и носи их с собой весь месяц. Камень — не волшебная палочка, а твой инструмент и якорь: он усиливает намерение, а действия остаются за тобой.</p>
+    </section>
+
+    <h2 class="section-title">Твои камни месяцев</h2>
+
+    <section class="card month" id="nov"></section>
+    <section class="card month" id="dec"></section>
+
+    <h2 class="section-title">Камень на сегодня</h2>
+    <p class="section-sub">Выбери любой день до 31 декабря — расчёт тоже личный.</p>
+
+    <section class="card" id="dayCard">
+      <div class="day-controls">
+        <div><label for="dayDate">Дата</label><input type="date" id="dayDate" min="2026-11-01" max="2026-12-31"></div>
+      </div>
+      <div id="dayOut"></div>
+    </section>
+
+    <section class="card wear">
+      <h3 style="font-size:19px">Как носить камни</h3>
+      <ul>
+        <li>Выбери один-два камня — этого достаточно. Не нужно собирать «всё самое сильное» в один браслет.</li>
+        <li>Камень должен тебе нравиться: цвет, фактура, ощущение в руке.</li>
+        <li>Для браслета бери бусины от 8 мм: чем крупнее камень, тем лучше.</li>
+        <li>Не смешивай в одном браслете камни разных чисел. Добавить можно обережные: шунгит, лаву, чёрный турмалин.</li>
+        <li>Носи камни в день их планеты или по отклику — когда рука сама тянется.</li>
+      </ul>
+      <button class="btn ghost" id="again">Посчитать для близкого человека</button>
+    </section>
+
+    <section class="card final">
+      <h2>✨ Это только ноябрь и декабрь. А что ждёт тебя в 2027 году?</h2>
+      <p>Твой камень года, камень силы и камни на все 12 месяцев — для тебя и твоих близких. Совсем скоро открою продукт «Мой 2027». Вступай в лист ожидания — и ты получишь его первой и по специальной цене.</p>
+      <a class="btn brass" href="https://t.me/+Z31FfrCn2Ng4YTBi" target="_blank" rel="noopener">Лист ожидания «Мой 2027»</a>
+
+      <p style="margin-top:22px">📿 А если хочешь браслет из своих камней, напиши мне в личку слово «БРАСЛЕТ».<br>Подберём. Соберём. Зарядим.</p>
+      <div class="lbl">Написать мне в личку</div>
+      <div class="pair">
+        <a class="btn" href="https://t.me/Lily_witch_ny" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn" href="https://max.ru/u/f9LHodD0cOK_TH9a4mvDtbIjww0weDOresKPzNlArp9aBPZn6UFdZOn3oKw" target="_blank" rel="noopener">MAX</a>
+      </div>
+
+      <div class="lbl" style="margin-top:22px">Мои каналы «АстроКамни с Лили»</div>
+      <div class="pair">
+        <a class="btn ghost" href="https://t.me/Astrokamni_Lily" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn ghost" href="https://max.ru/channel_AstroKamni_Lily" target="_blank" rel="noopener">MAX</a>
+      </div>
+      <div class="sign">С любовью, Лилия</div>
+    </section>
+
+  </div>
+</main>
+
+<footer>Камни — инструмент поддержки, а не замена врачу и собственным действиям.</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------- тексты ----------
+  const NUM = {
+    1:{t:"Число 1 — энергия Солнца",
+       p:"Твой месяц — время заявить о себе. Солнце даёт силу начинать, брать ответственность и закладывать фундамент будущих планов. Не жди идеального момента — начинай.",
+       plus:"уважение к старшим и наставникам, время с отцом, утренние практики.",
+       minus:"гордыня, споры ради правоты, обида на критику.",
+       stones:"рубин, гранат, солнечный камень, пирит"},
+    2:{t:"Число 2 — энергия Луны",
+       p:"Мягкий, чувственный месяц. Время семьи, заботы и доверия интуиции. Но есть нюанс: процесс должен превращаться в результат — доводи начатое до конца и не застревай в сомнениях.",
+       plus:"отдых без чувства вины, тёплые встречи, разговор с мамой.",
+       minus:"обиды, тревожность, эмоциональные качели.",
+       stones:"жемчуг, лунный камень, белый агат, кахолонг"},
+    3:{t:"Число 3 — энергия Юпитера",
+       p:"Месяц роста и удачи. Юпитер расширяет: новые знакомства, учёба, проекты, наставники. Учись, делись опытом, помогай — и возвращаться будет больше.",
+       plus:"благодарность, щедрость, благотворительность.",
+       minus:"критика, непрошеные советы, пустые разговоры и нытьё вокруг.",
+       stones:"цитрин, янтарь, жёлтый топаз, жёлтый турмалин"},
+    4:{t:"Число 4 — энергия Раху",
+       p:"Месяц неожиданных поворотов и творческих идей. Может вернуться то, о чём ты давно мечтала, — но силы расходуй осознанно и не распыляйся. В отношениях снимай «розовые очки» вовремя.",
+       plus:"порядок в доме и делах, творчество, честность.",
+       minus:"иллюзии, спешка, жизнь в жёстких рамках.",
+       stones:"дымчатый кварц, гессонит, нуумит, бычий глаз"},
+    5:{t:"Число 5 — энергия Меркурия",
+       p:"Месяц движения и общения. Договаривайся, учись, продавай, знакомься, выбирайся в новые места — всё, что про контакты, сейчас идёт легче.",
+       plus:"любопытство, доброжелательная речь, поездки.",
+       minus:"сплетни, суета, зацикленность на деньгах.",
+       stones:"изумруд, хризолит, зелёный авантюрин, аквамарин"},
+    6:{t:"Число 6 — энергия Венеры",
+       p:"Месяц любви, красоты и гармонии. Разреши себе обновить гардероб и интерьер, порадовать себя, уделить время отношениям и творчеству. Красота сейчас — ресурс, а не каприз.",
+       plus:"уют, забота о себе, мероприятия и вдохновение.",
+       minus:"импульсивные желания, недосып, жёсткая дисциплина «через надо».",
+       stones:"розовый кварц, горный хрусталь, морганит, кунцит"},
+    7:{t:"Число 7 — энергия Кету",
+       p:"Месяц интуиции и внутреннего поиска. События могут удивлять, а логика — подводить. Меньше контроля, больше доверия своим ощущениям.",
+       plus:"тишина, медитация, движение, личное пространство.",
+       minus:"страхи, сравнение с другими, жалость к себе.",
+       stones:"тигровый глаз, соколиный глаз, питерсит, лабрадор"},
+    8:{t:"Число 8 — энергия Сатурна",
+       p:"Месяц дисциплины и результата. Сатурн награждает тех, кто действует честно и последовательно. Хорошее время закрыть долги, довести дела до конца и посмотреть своим страхам в глаза.",
+       plus:"режим, терпение, умение прощать.",
+       minus:"обиды, попытки всё контролировать, зависть.",
+       stones:"аметист, лазурит, синий сапфир, чёрный агат"},
+    9:{t:"Число 9 — энергия Марса",
+       p:"Месяц завершений и мощной энергии. Подведи итоги, освободись от лишнего, закрой хвосты — и в новый год ты войдёшь налегке. Избыток сил направляй в спорт и дело, а не в споры.",
+       plus:"движение, помощь слабым, организованность.",
+       minus:"злость, агрессия, желание добиться своего любой ценой.",
+       stones:"сердолик, красная яшма, красный агат, красный коралл"}
+  };
+
+  const GENERAL = {
+    11:{name:"Ноябрь", emoji:"🍂",
+        text:"<b>Общая энергия ноября — число 3, Юпитер.</b> Осень замедляется, а внутри просыпается желание творить, общаться и делиться теплом. Хорошо узнавать новое, делиться опытом и ставить большие цели на 2027 год. Но есть нюанс: сила этого месяца не в громкости, а в искренности.<br>💎 Камни для всех: цитрин, янтарь, жёлтый топаз; лунный камень, кахолонг, жемчуг."},
+    12:{name:"Декабрь", emoji:"❄️",
+        text:"<b>Общая энергия декабря — число 4, Раху.</b> Хочется всё успеть до Нового года, но спешка сейчас — плохой советчик. Снимай «розовые очки», держи баланс между мечтой и реальностью и не принимай решений на эмоциях.<br>💎 Камни для всех: дымчатый кварц, гессонит, бычий глаз; цитрин, янтарь. Бычий глаз — мой личный помощник от хаоса: помогает не расплескаться, когда задач больше, чем часов в сутках."}
+  };
+
+  const DAY = {
+    1:{t:"День действовать первой. Начни то, что давно откладываешь.", s:"гранат, солнечный камень"},
+    2:{t:"День мягкости и заботы. Позвони маме, побудь с близкими.", s:"жемчуг, лунный камень"},
+    3:{t:"День учёбы и щедрости. Узнай новое и поделись опытом.", s:"цитрин, янтарь"},
+    4:{t:"День неожиданностей. Не спеши с решениями, наведи порядок.", s:"дымчатый кварц, бычий глаз"},
+    5:{t:"День общения. Назначай встречи, договаривайся, двигайся.", s:"хризолит, авантюрин"},
+    6:{t:"День красоты и уюта. Порадуй себя, укрась пространство.", s:"розовый кварц, горный хрусталь"},
+    7:{t:"День интуиции. Меньше суеты, больше тишины.", s:"тигровый глаз, лабрадор"},
+    8:{t:"День дисциплины. Закрой важные дела — без «потом».", s:"аметист, лазурит"},
+    9:{t:"День завершений. Подведи итоги, отпусти лишнее, подвигайся.", s:"сердолик, красная яшма"}
+  };
+
+  // индекс = Date.getDay(): 0 — воскресенье
+  const WEEK = [
+    {n:"Воскресенье, Солнце", t:"день планов и света. Наметь неделю, проведи время с отцом.", s:"рубин, гранат, арбузный турмалин"},
+    {n:"Понедельник, Луна", t:"день эмоций и заботы. Прими ванну, узнай, как дела у мамы.", s:"жемчуг, лунный камень, перламутр"},
+    {n:"Вторник, Марс", t:"день действия и силы. Спорт, решительные шаги, завершение дел.", s:"красный коралл, сердолик, красная яшма"},
+    {n:"Среда, Меркурий", t:"день общения и нового. Только без суеты и пустой болтовни.", s:"изумруд, зелёный турмалин, хризолит"},
+    {n:"Четверг, Юпитер", t:"день роста. Учись, делись опытом, благодари наставников.", s:"жёлтый сапфир, цитрин, янтарь"},
+    {n:"Пятница, Венера", t:"день красоты и уюта. Отношения, творчество, забота о себе.", s:"горный хрусталь, розовый кварц, морганит"},
+    {n:"Суббота, Сатурн", t:"день дисциплины и семьи. Помоги старшим и не ленись.", s:"синий сапфир, лазурит, аметист"}
+  ];
+
+  const MONTHS = ["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"];
+  const MONTHS_NOM = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+
+  // ---------- расчёт ----------
+  const YEAR_NUM = 1; // 2026 → 2+0+2+6 = 10 → 1
+
+  function digitSum(str){ return String(str).replace(/\D/g,"").split("").reduce((a,c)=>a+ +c,0); }
+  function reduce(n){ while(n>9){ n = digitSum(n); } return n; }
+  function pad(n){ return String(n).padStart(2,"0"); }
+
+  // личный камень месяца = вся дата рождения + номер месяца + число года
+  function personalMonth(d,m,y,month){
+    const a = reduce(digitSum(pad(d)+pad(m)+y));
+    return reduce(a + reduce(month) + YEAR_NUM);
+  }
+  // личный камень дня = (день + месяц рождения) + (полная дата дня)
+  function personalDay(d,m,date){
+    const a = reduce(digitSum(pad(d)+pad(m)));
+    const b = reduce(digitSum(pad(date.getDate())+pad(date.getMonth()+1)+date.getFullYear()));
+    return reduce(a+b);
+  }
+
+  // ---------- форма ----------
+  const $ = id => document.getElementById(id);
+  const dSel=$("d"), mSel=$("m"), yIn=$("y");
+  dSel.innerHTML = '<option value="">—</option>' + Array.from({length:31},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join("");
+  mSel.innerHTML = '<option value="">—</option>' + MONTHS_NOM.map((n,i)=>`<option value="${i+1}">${n}</option>`).join("");
+
+  let birth = null;
+
+  function valid(d,m,y){
+    if(!d||!m||!y||y<1900||y>2026) return false;
+    const dt = new Date(y,m-1,d);
+    return dt.getFullYear()===y && dt.getMonth()===m-1 && dt.getDate()===d;
+  }
+
+  function monthCard(month){
+    const n = personalMonth(birth.d,birth.m,birth.y,month);
+    const x = NUM[n], g = GENERAL[month];
+    return `
+      <div class="month-head">
+        <span class="badge">${n}</span>
+        <div><div class="kicker">${g.emoji} ${g.name} 2026 · твоё число</div><h3>${x.t}</h3></div>
+      </div>
+      <p>${x.p}</p>
+      <ul class="list">
+        <li>✔️ <b>Поддержит:</b> ${x.plus}</li>
+        <li>❌ <b>Забирает энергию:</b> ${x.minus}</li>
+      </ul>
+      <div class="stones">💎 Твои камни: ${x.stones}</div>
+      <div class="general">${g.text}</div>`;
+  }
+
+  function renderDay(){
+    const v = $("dayDate").value;
+    if(!v||!birth) return;
+    const [yy,mm,dd] = v.split("-").map(Number);
+    const date = new Date(yy,mm-1,dd);
+    const n = personalDay(birth.d,birth.m,date);
+    const w = WEEK[date.getDay()], x = DAY[n];
+    $("dayOut").innerHTML = `
+      <div class="month-head">
+        <span class="badge">${n}</span>
+        <div><div class="kicker">${dd} ${MONTHS[mm-1]} · твоё число дня</div><h3 style="font-size:18px">${x.t}</h3></div>
+      </div>
+      <div class="stones">💎 Камни дня: ${x.s}</div>
+      <div class="weekday"><b>${w.n}</b> — ${w.t}<br><span style="color:var(--muted)">Камни дня недели: ${w.s}</span></div>`;
+  }
+
+  function defaultDay(){
+    const now = new Date();
+    let t = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const min = new Date(2026,10,1), max = new Date(2026,11,31);
+    if(t<min) t=min; if(t>max) t=max;
+    return `${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}`;
+  }
+
+  $("calc").addEventListener("click", ()=>{
+    const d=+dSel.value, m=+mSel.value, y=+yIn.value;
+    if(!valid(d,m,y)){ $("err").style.display="block"; return; }
+    $("err").style.display="none";
+    birth = {d,m,y};
+    $("forWhom").textContent = `Расчёт для даты рождения ${pad(d)}.${pad(m)}.${y}`;
+    $("nov").innerHTML = monthCard(11);
+    $("dec").innerHTML = monthCard(12);
+    if(!$("dayDate").value) $("dayDate").value = defaultDay();
+    renderDay();
+    $("result").style.display="block";
+    $("result").scrollIntoView({behavior:"smooth", block:"start"});
+  });
+
+  $("dayDate").addEventListener("change", renderDay);
+
+  $("again").addEventListener("click", ()=>{
+    dSel.value=""; mSel.value=""; yIn.value="";
+    $("result").style.display="none";
+    $("formCard").scrollIntoView({behavior:"smooth", block:"start"});
+    dSel.focus();
+  });
+
+  // для проверки расчётов из консоли
+  window.__stones = {personalMonth, personalDay};
+})();
+</script>
+</body>
+</html>
